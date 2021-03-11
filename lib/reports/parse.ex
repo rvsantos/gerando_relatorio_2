@@ -9,5 +9,6 @@ defmodule JobReportGenerator.Parse do
     line
     |> String.trim()
     |> String.split(",")
+    |> List.update_at(1, &String.to_integer/1)
   end
 end
