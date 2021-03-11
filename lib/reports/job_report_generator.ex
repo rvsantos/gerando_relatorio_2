@@ -1,0 +1,2 @@
+defmodule JobReportGenerator do
+end
