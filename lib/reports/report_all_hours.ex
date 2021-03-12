@@ -1,11 +1,5 @@
 defmodule JobReportGenerator.AllHours do
-  alias JobReportGenerator.Parse
-
-  def build(filename) do
-    content =
-      filename
-      |> Parse.parse_file()
-
+  def build(content) do
     names =
       content
       |> list_of_names
@@ -17,7 +11,7 @@ defmodule JobReportGenerator.AllHours do
     all_hours
   end
 
-  defp list_of_names(list) do
+  def list_of_names(list) do
     list
     |> Enum.map(fn [head | _tail] -> head end)
     |> Enum.uniq()
