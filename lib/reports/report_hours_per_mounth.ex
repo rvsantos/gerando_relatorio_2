@@ -50,7 +50,9 @@ defmodule JobReportGenerator.HoursPerMounth do
     |> Enum.reduce(%{}, fn {name, mounths}, report ->
       list_months_name =
         mounths
-        |> Enum.reduce(%{}, fn {k, v}, acc -> Map.put(acc, @mounths[k], v) end)
+        |> Enum.reduce(%{}, fn {k, v}, acc ->
+          Map.put(acc, @mounths[k], v)
+        end)
 
       Map.put(report, name, list_months_name)
     end)

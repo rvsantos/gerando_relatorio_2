@@ -21,5 +21,9 @@ defmodule JobReportGenerator.AllHours do
     Map.put(report, name, report[name] + hour)
   end
 
-  defp report_acc(names), do: Enum.into(names, %{}, fn line -> {line, 0} end)
+  defp report_acc(names),
+    do:
+      Enum.into(names, %{}, fn line ->
+        {line, 0}
+      end)
 end
